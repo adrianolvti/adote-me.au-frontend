@@ -96,11 +96,7 @@
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
   }
-select:-moz-placeholder{
-  color: #bebcbc;
-  font-style: italic;
 
-}
 
   select:not([type="checkbox"]){
     width: 95%;
@@ -251,6 +247,8 @@ select:-moz-placeholder{
       -webkit-transform: translateX(-20px);
     }
   }
+
+ 
   
   @keyframes fadeOutLeft {
     0% {
@@ -260,5 +258,9 @@ select:-moz-placeholder{
     100% {
       opacity: 0;
       transform: translateX(-20px);
+ 
     }
+
+
+    
   }

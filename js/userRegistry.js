@@ -17,3 +17,4 @@ formE1.addEventListener('submit', evento =>{
   .then(document.getElementById('form-api').reset())
   .then(window.location.href="#paralogin")
 })
+
