@@ -276,7 +276,7 @@ header
 }
 
 .header-area .main-nav a.logo {
-  background-image: url(/src/assets/images/black-adoteme2.png);
+  background-image: url(../src/assets/images/black-adoteme2.png);
   width: 200px;
   height: 38px;
   border-radius: 10px;
@@ -285,7 +285,7 @@ header
 }
 
 .background-header .main-nav a.logo {
-  background-image: url(/src/assets/images/black-adoteme2.png);
+  background-image: url(../src/assets/images/black-adoteme2.png);
   width: 200px;
   height: 38px;
   border-radius: 10px;
@@ -723,7 +723,7 @@ Banner Style
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url(/src/assets/images/banner2.jpg);
+  background-image: url(../src/assets/images/banner2.jpg);
   padding: 200px 0px 80px 0px;
   position: relative;
   overflow: hidden;
