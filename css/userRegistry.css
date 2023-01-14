@@ -248,6 +248,9 @@
     }
   }
 
+  td, tr, table {
+    border: 1px solid black;
+}
  
   
   @keyframes fadeOutLeft {
