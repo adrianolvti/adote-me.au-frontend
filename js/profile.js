@@ -36,7 +36,7 @@ function newLineTable(animal) {
 }
 
 function main() {
-    let data = allAnimal("https://localhost:8080/animal/");
+    let data = allAnimal("https://localhost:8080/animal");
     let animals = JSON.parse(data);
     let table = document.getElementById("table");
 
