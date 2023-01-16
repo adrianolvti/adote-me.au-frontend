@@ -1,11 +1,10 @@
-/////Busca no BD o nome do animal, idade, cidade, estado//////
+/////Busca no BD o tipo do animal, imagem, característica//////
 //////////////////////////////////////////////////////////////
 fetch('http://localhost:8080/animal')
     .then(response => response.json())
     .then(data => {
         data.forEach(animal => {
             const app = document.getElementById('root');
-
             const block = document.createElement('blockquote');
             if(animal.profileImage == null ){
                 block.setAttribute('data-id', 'ygf81Ww');//caso não tenha imagem mostra imagem padrão
@@ -32,6 +31,13 @@ fetch('http://localhost:8080/animal')
             const outroaga6 = document.createElement('h6');
             outroaga6.textContent = animal.physicalCharacteristics;
 
+            const breed = document.createElement('h6');
+            breed.textContent = animal.breed.type;
+
+            //link que direciona para o perfil do animal
+            const link = document.createElement('a');
+            link.setAttribute('href', '/animalProfile.html?'+animal.id);
+
             const right_content = document.createElement('div');
             right_content.setAttribute('class', 'right-content align-self-center');
 
@@ -49,9 +55,12 @@ fetch('http://localhost:8080/animal')
 
             left_image.appendChild(block);
             left_image.appendChild(script);
-            right_content.appendChild(aga4); //coloca elemento h4 dentro de rigth_content
-            right_content.appendChild(aga6); //coloca elemento h6 dentro de rigth_content
-            right_content.appendChild(outroaga6); //coloca elemento h6 dentro de rigth_content
+
+            link.appendChild(aga4);
+            link.appendChild(aga6);
+            link.appendChild(outroaga6);
+            right_content.appendChild(link);
+
             listItem.appendChild(left_image);//coloca elemento left-image dentro de listItem
             listItem.appendChild(right_content);//coloca elemento right-content dentro de listItem
             col12.appendChild(listItem);//coloca elemento listItem dentro de col12
