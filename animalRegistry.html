@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Cadastrar Animal</title>
+    <style>
+        /* formatando o cabeçalho dos formulários */
+        h1 {
+            font-size: 40px;
+            color: #066a75;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+
+        h1:after {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 2px;
+            margin-top: 10px;
+            background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+            background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="display-4">Cadastrar Animal</h1>
+            <div class="card">
+                <div class="card-body">
+                    <form class="row g-3" id="form-registry">
+                        <div class="col-md-6">
+                            <label for="nome_apelido" class="form-label">Nome / apelido</label>
+                            <input type="text" class="form-control" id="nome_apelido">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="idade" class="form-label">Idade</label>
+                            <input type="number" class="form-control" id="idade">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select id="sexo" class="form-select">
+                                <option disabled selected value> selecione </option>
+                                <option value="FEMALE">Femea</option>
+                                <option value="MALE">Macho</option>
+                                <option value="NO_INFORMATION">Sem informação</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="temperamento" class="form-label">Temperamento</label>
+                            <select id="temperamento" class="form-select">
+                                <option disabled selected value> selecione </option>
+                            </select>
+
+                        </div>
+                        <div class="col-md-3">
+                            <label for="raca" class="form-label">Raça</label>
+                            <select id="raca" class="form-select">
+                                <option disabled selected value> selecione </option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="familia" class="form-label">Familia</label>
+                            <select id="familia" class="form-select">
+                                <option disabled selected value> selecione </option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="necessidade_especial" class="form-label">Necessidade especial</label>
+                            <select id="necessidade_especial" class="form-select">
+                                <option value="true">Sim</option>
+                                <option value="false" selected>Não</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="historia_descricao" class="form-label">Historia / Descrição</label>
+                            <textarea class="form-control" id="historia_descricao"
+                                aria-label="With textarea"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="caracteristicas_fisicas" class="form-label">Caracteristicas / fisicas</label>
+                            <textarea class="form-control" id="caracteristicas_fisicas"
+                                aria-label="With textarea"></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/animalRegistry.js"></script>
+</body>
+
+</html>
