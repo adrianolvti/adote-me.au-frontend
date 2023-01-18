@@ -7,14 +7,15 @@ fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal/' + params)
     .then(data => {
 
         const block = document.getElementById('block');
-        imgurId = 'ygf81Ww';
+        let imgurId = 'ygf81Ww';
 
         if (data.profileImage != null) {
-            console.log(typeof data.profileImage);
-            imgurId = data.profileImage.imgurId;
+           imgurId = data.profileImage.imgurId;
         }
 
         block.setAttribute('data-id', imgurId);
+        const script = document.createElement('script');
+        script.src='//s.imgur.com/min/embed.js';
 
         const perfil = document.getElementById('perfil');
 
@@ -47,6 +48,7 @@ fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal/' + params)
         perfil.appendChild(desc);
         perfil.appendChild(doador);
         perfil.appendChild(email);
+        perfil.appendChild(script);
     })
     .catch(err => {
         console.log(err)
