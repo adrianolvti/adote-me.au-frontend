@@ -22,7 +22,7 @@ formRegistry.addEventListener('submit', evento => {
     ]
   }
   //Cadastra Animal
-  fetch('http://localhost:8080/animal', {
+  fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${localStorage.jwt}`,
@@ -45,7 +45,7 @@ formRegistry.addEventListener('submit', evento => {
 })
 
 function setSelectTemperamento() {
-  var data = findAll('http://localhost:8080/animal/temperament/find?status=1'),
+  var data = findAll('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal/temperament/find?status=1'),
     select = document.getElementById('temperamento');
   temperamentos = JSON.parse(data);
 
@@ -60,7 +60,7 @@ function setSelectTemperamento() {
 }
 
 function setSelectRaca() {
-  var data = findAll('http://localhost:8080/animal/breed/find?status=1'),
+  var data = findAll('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal/breed/find?status=1'),
     select = document.getElementById('raca');
   racas = JSON.parse(data);
 
@@ -75,7 +75,7 @@ function setSelectRaca() {
 }
 
 function setSelectFamilia() {
-  var data = findAll('http://localhost:8080/animal/family/find?status=1'),
+  var data = findAll('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal/family/find?status=1'),
     select = document.getElementById('familia');
   familias = JSON.parse(data);
 

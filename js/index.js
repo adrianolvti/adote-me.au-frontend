@@ -1,6 +1,6 @@
 /////Busca no BD o tipo do animal, imagem, característica//////
 //////////////////////////////////////////////////////////////
-fetch('http://localhost:8080/animal')
+fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal')
     .then(response => response.json())
     .then(data => {
         data.forEach(animal => {

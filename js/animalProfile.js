@@ -2,7 +2,7 @@
 var params = window.location.search.substring(1);
 
 let mail;
-fetch('http://localhost:8080/animal/' + params)
+fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal/' + params)
     .then(response => response.json())
     .then(data => {
 

@@ -21,7 +21,7 @@ function createSetInformationUserProfile() {
 }
 
 // Solicitação GET animais.
-fetch('http://localhost:8080/animal/all-by-user', {
+fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/animal/all-by-user', {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ formE.addEventListener('submit', evento => {
     password: document.getElementById('senha_login').value
   }
   //Cadastra USER
-  fetch('http://localhost:8080/api/v1/auth/authenticate', {
+  fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/api/v1/auth/authenticate', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ formE1.addEventListener('submit', evento => {
     password: document.getElementById('password').value
   }
   //Cadastra USER
-  fetch('http://localhost:8080/api/v1/auth/register', {
+  fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/api/v1/auth/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ formE1.addEventListener('submit', evento => {
       }
 
       //Envia endereço com retorno da API
-      fetch('http://localhost:8080/user-address', {
+      fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/user-address', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.jwt}`,
@@ -102,7 +102,7 @@ async function getUserByJwt() {
   jwt = localStorage.getItem('jwt');
   if (jwt != null) {
 
-    const response = await fetch('http://localhost:8080/api/v1/auth/me', {
+    const response = await fetch('http://adote-me-au.us-east-1.elasticbeanstalk.com/api/v1/auth/me', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
