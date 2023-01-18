@@ -1,4 +1,6 @@
 
+redirectIfUserLogged();
+
 const formE = document.getElementById('form-login');
 const formE1 = document.getElementById('form-api');
 
@@ -38,9 +40,9 @@ formE.addEventListener('submit', evento => {
             localStorage.jwt = json.token;
           });
 
-        user = getUserByJwt();
-        
-        window.location.href = "/userProfile.html?" + user.id;
+        getUserByJwt();
+        userLocalStorage = JSON.parse(localStorage.getItem('user'));
+        window.location.href = "/userProfile.html?" + userLocalStorage.id;
       }
     })
 })
@@ -66,11 +68,11 @@ formE1.addEventListener('submit', evento => {
   })
     .then(response => response.json())// converte para json
     .then(json => {
-      
+
       localStorage.jwt = json.token;
       getUserByJwt();
       userLocalStorage = JSON.parse(localStorage.getItem('user'));
-     
+
       const user_address = {
         city: document.getElementById('city').value,
         district: document.getElementById('district').value,
@@ -79,7 +81,7 @@ formE1.addEventListener('submit', evento => {
           id: userLocalStorage.id,
         }
       }
-      
+
       //Envia endereço com retorno da API
       fetch('http://localhost:8080/user-address', {
         method: 'POST',
@@ -111,17 +113,27 @@ async function getUserByJwt() {
         return response.json().then(json => {
 
           user = {
-            'id' : json.id,
-            'nome' : json.name
+            'id': json.id,
+            'nome': json.name,
+            'email': json.email,
           };
 
           localStorage.user = JSON.stringify(user);
-        return user;  
+          return user;
         })
 
       })
-      
-      return response;
+
+    return response;
   }
 }
 
+function redirectIfUserLogged() {
+
+  getUserByJwt();
+  userLocalStorage = JSON.parse(localStorage.getItem('user'));
+  if (userLocalStorage != null) {
+    window.location.href = "/userProfile.html?" + userLocalStorage.id;
+  }
+
+}

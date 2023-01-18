@@ -1,4 +1,26 @@
-// Solicitação GET.
+
+// busca dados do usuario
+function createSetInformationUserProfile() {
+
+  userLocalStorage = JSON.parse(localStorage.getItem('user'));
+  
+  const perfilUsuarioDiv = document.getElementById('perfil-usuario');
+  
+  const cod = document.createElement('h4');
+  cod.textContent = 'Cod: ' + userLocalStorage.id;
+
+  const nome = document.createElement('h4');
+  nome.textContent = 'Nome: ' + userLocalStorage.nome;
+ 
+  const email = document.createElement('h4');
+  email.textContent = 'Email: ' + userLocalStorage.email;
+  
+  perfilUsuarioDiv.appendChild(cod);
+  perfilUsuarioDiv.appendChild(nome);
+  perfilUsuarioDiv.appendChild(email);
+}
+
+// Solicitação GET animais.
 fetch('http://localhost:8080/animal/all-by-user', {
   method: 'GET',
   headers: {
@@ -21,8 +43,7 @@ fetch('http://localhost:8080/animal/all-by-user', {
     
     tableDiv.append(table)
     
-  })    //imprimir dados no console
-// .catch(err => console.log('Erro de solicitação', err)); // lidar com os erros por catch
+  })  
 
 
 function createTableAndHeader(headers) {
@@ -34,7 +55,6 @@ function createTableAndHeader(headers) {
   let thead =  document.createElement("thead");
 
   headers.forEach(header => {
-    console.log(header);
     let th = document.createElement("th");
     th.textContent = header;
     thead.append(th);
@@ -45,15 +65,6 @@ function createTableAndHeader(headers) {
   return table;  
 }
 
-
-
-// function allAnimals(url) {
-//     let request = new XMLHttpRequest();
-//     request.open("GET", url, false);
-//     request.send();
-//     return request.responseText;
-// }
-
 function newLineTable(animal) {
   let line = document.createElement("tr");
   let tdId = document.createElement("td");
@@ -61,31 +72,17 @@ function newLineTable(animal) {
   let tdBreedType = document.createElement("td");
   let tdAdopted = document.createElement("td");
 
-
   tdId.innerHTML = animal.id;
   tdName.innerHTML = animal.name;
   tdBreedType.innerHTML = animal.breed.type;
   tdAdopted.innerHTML = animal.adopted;
-
 
   line.appendChild(tdId);
   line.appendChild(tdName);
   line.appendChild(tdBreedType);
   line.appendChild(tdAdopted);
 
-
   return line;
 }
 
-// function main() {
-//   let data = allAnimal("https://localhost:8080/animal");
-//   let animals = JSON.parse(data);
-//   let table = document.getElementById("table");
-
-//   animals.forEach(animal => {
-//     let line = newLineTable(animal);
-//     table.appendChild(line);
-//   });
-// }
-
-// main()
+createSetInformationUserProfile();
